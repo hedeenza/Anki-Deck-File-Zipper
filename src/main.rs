@@ -44,5 +44,9 @@ pub fn main() {
     }
 
     let program_duration = program_start.elapsed(); // Finish Benchmarking Timer
-    println!("{} Lines Successfuly Zipped in {:.2?}", &paired.len(), program_duration);
+    println!(
+        "{} Lines Successfuly Zipped in {:.2?}",
+        &paired.len(),
+        program_duration
+    );
 }
