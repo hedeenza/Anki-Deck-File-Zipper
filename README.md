@@ -33,3 +33,7 @@ export PATH="$PATH:/path/to/directory/where/this/program/lives"
 
 alias az="anki_deck_file_zipper"
 ```
+
+## License
+
+This program is distributed under the terms of a GNU GPLv3 license. See LICENSE.md for details.
