@@ -5,10 +5,11 @@
 - This program could also be used on the output file to add additional tab-separated columns.
 
 ## Get the Tool
-- The pre-compiled binary and source code are available in "Releases".
+- The pre-compiled binary (for Linux and Windows) and source code are available in "Releases".
+- macOS users will need to compile from source.
 
 ## Running the CLI
-`$ anki_deck_file_zipper <Target_Language_File> <Base_Language_File> <Output_File>`
+`$ ./anki_deck_file_zipper <Target_Language_File> <Base_Language_File> <Output_File>`
 
 - Target Language = File containing the sentences in the target language
 - Base Language = File containing the translations in a language you understand (e.g. your native language)
@@ -17,8 +18,11 @@
 - Ensure the number of lines in the <Target_Language_File> and the <Base_Language_File> are the same. "Trailing" lines will be removed.
 
 ## Building from Source
+Navigate to the root directory.
 - If using cargo: `$ cargo build --release`
 - If not using cargo: `$ rustc -0 src/main.rs`
+
+The executable binary should then be available in `./target/release/`
 
 ## Running the CLI from anywhere in your file system
 Add the following lines to your `.bashrc` file:
