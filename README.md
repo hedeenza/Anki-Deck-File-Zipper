@@ -5,17 +5,17 @@
 - This program could also be used on the output file to add additional tab-separated columns.
 
 ## Get the Tool
-- The pre-compiled binary (for Linux and Windows) and source code are available in "Releases".
-- macOS users will need to compile from source.
+- Source code is available in "Releases".
 
 ## Running the CLI
-`$ ./anki_deck_file_zipper <Target_Language_File> <Base_Language_File> <Output_File>`
+`$ ./anki_deck_file_zipper -t <Target_Language_File> -n <Native_Language_File> -o <Output_File>`
 
-- Target Language = File containing the sentences in the target language
-- Base Language = File containing the translations in a language you understand (e.g. your native language)
-- Output = Name of the combined file produced by the program
+- `--target-language, -t <TARGET_LANGUAGE>`: The file containing the sentences in the target language
+- `--native-language, -n <NATIVE_LANGUAGE>`: The file containing the translations in a language you understand (e.g. your native language)
+- `--output-file, -o <OUTPUT_FILE>`: The name of the Output File
+- `--help, -h`: Print help
 - Ensure the file-zipping program has executable permissions.
-- Ensure the number of lines in the <Target_Language_File> and the <Base_Language_File> are the same. "Trailing" lines will be removed.
+- Ensure the number of lines in the <Target_Language> file and the <Native_Language> file are the same. "Trailing" lines will be removed.
 
 ## Building from Source
 Navigate to the root directory.
@@ -36,4 +36,3 @@ alias az="anki_deck_file_zipper"
 
 ## License
 
-This program is distributed under the terms of a GNU GPLv3 license. See LICENSE.md for details.
