@@ -1,3 +1,4 @@
+#![warn(clippy::pedantic)]
 use clap::Parser;
 use std::fs::File;
 use std::io::{BufRead, BufReader, Write};
@@ -64,7 +65,7 @@ fn read_to_vec(file_name: String) -> Vec<String> {
                 language_vector.push(line);
             }
             Err(err) => {
-                println!("[ ERROR ] : {}", err);
+                println!("[ ERROR ] : {err}");
             }
         }
     }
