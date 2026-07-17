@@ -26,13 +26,9 @@ pub fn main() {
     // Parse command line arguments
     let args = Cli::parse();
 
-    // Create vectors to hold the file contents
-    let target_vec = Vec::with_capacity(20_000);
-    let native_vec = Vec::with_capacity(20_000);
-
     // Read in the Language files, push their contents to their vectors
-    let target_sentences = read_to_vec(args.target_language, target_vec);
-    let native_sentences = read_to_vec(args.native_language, native_vec);
+    let target_sentences = read_to_vec(args.target_language);
+    let native_sentences = read_to_vec(args.native_language);
 
     // Create the Output file
     let mut outfile =
@@ -43,8 +39,7 @@ pub fn main() {
 
     // Write the zipped sentences to the output file
     for pairing in &paired {
-        let out_line = format!("{:?}\t{:?}\n", pairing.0, pairing.1);
-        let _write = writeln!(outfile, "{}", out_line);
+        let _write = writeln!(outfile, "{:?}\t{:?}\n", pairing.0, pairing.1);
     }
 
     // Finish Benchmarking Timer
@@ -56,7 +51,9 @@ pub fn main() {
     );
 }
 
-fn read_to_vec(file_name: String, mut language_vector: Vec<String>) -> Vec<String> {
+fn read_to_vec(file_name: String) -> Vec<String> {
+    // Create the output vector with capacity
+    let mut language_vector = Vec::with_capacity(20_000);
     // Read in the Native Language file
     let file = File::open(file_name).expect("Could not read Language File");
     let reader = BufReader::new(file);
